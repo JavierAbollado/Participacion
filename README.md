@@ -3,6 +3,7 @@
  - [Introducción](#id0)
  - [Conceptos Fundamentales](#id1)
  - [Ejemplos con esquemas sencillos](#id2)
+ - [Introducción al Problema de los Filósofos y los Tenedores](#id2.2)
  - [PySpark: Introducción y su Importancia en la Programación Paralela](#id3)
  - [Resumen de comandos de terminal linux](#id4)
 
@@ -231,6 +232,71 @@ if __name__ == '__main__':
     Process(target=productor).start()
     Process(target=consumidor).start()
 ``` 
+
+
+
+
+
+
+# Introducción al Problema de los Filósofos y los Tenedores <a name=id2.2></a>
+
+El problema de los filósofos y los tenedores es un clásico problema de concurrencia que ilustra los desafíos de la sincronización en entornos multi-hilo o multi-proceso. Se basa en la situación hipotética en la que varios filósofos se sientan alrededor de una mesa redonda y cada uno necesita tenedores para comer su comida. Sin embargo, solo hay un tenedor entre cada par de filósofos adyacentes.
+
+El desafío radica en evitar los posibles bloqueos y la inanición de los filósofos, asegurando que cada filósofo pueda obtener los dos tenedores necesarios para comer sin interferir con los demás.
+
+### Ejemplo de Código en Python utilizando multiprocessing
+
+A continuación, te presento un ejemplo de código en Python que aborda el problema de los filósofos y los tenedores utilizando el módulo **multiprocessing**. Este código utiliza semáforos para controlar el acceso a los tenedores:
+
+```python
+import time
+from multiprocessing import Process, Lock, Semaphore
+
+# Número de filósofos
+NUM_FILOSOFOS = 5
+
+# Semáforo para controlar el acceso a los tenedores
+tenedores = [Semaphore(1) for _ in range(NUM_FILOSOFOS)]
+
+def filosofo(filosofo_id, tenedor_izquierdo, tenedor_derecho):
+    while True:
+        # Pensar
+        print(f"Filósofo {filosofo_id} está pensando.")
+        time.sleep(2)
+
+        # Tomar tenedores
+        tenedor_izquierdo.acquire()
+        tenedor_derecho.acquire()
+        print(f"Filósofo {filosofo_id} ha tomado los tenedores y está comiendo.")
+
+        # Comer
+        time.sleep(3)
+        print(f"Filósofo {filosofo_id} ha terminado de comer.")
+
+        # Soltar tenedores
+        tenedor_izquierdo.release()
+        tenedor_derecho.release()
+
+if __name__ == "__main__":
+    # Crear los procesos de los filósofos
+    procesos_filosofos = []
+    for i in range(NUM_FILOSOFOS):
+        tenedor_izquierdo = tenedores[i]
+        tenedor_derecho = tenedores[(i + 1) % NUM_FILOSOFOS]
+        proceso = Process(target=filosofo, args=(i, tenedor_izquierdo, tenedor_derecho))
+        procesos_filosofos.append(proceso)
+        proceso.start()
+
+    # Esperar a que todos los procesos terminen
+    for proceso in procesos_filosofos:
+        proceso.join()
+```
+
+En este ejemplo, cada filósofo es representado por un proceso separado y los tenedores son controlados por semáforos para evitar situaciones de bloqueo. Cada filósofo alterna entre períodos de pensamiento, toma de tenedores, comer y liberación de tenedores.
+
+Este es solo un enfoque para resolver el problema de los filósofos y los tenedores utilizando el módulo **multiprocessing**. Hay otras estrategias y enfoques posibles, pero este código proporciona una base para comprender el concepto y comenzar a explorar más sobre programación paralela y distribuida en Python.
+
+
 
 
 # PySpark: Introducción y su Importancia en la Programación Paralela <a name=id3></a>

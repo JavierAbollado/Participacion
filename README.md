@@ -2,8 +2,9 @@
 
  - [Introducción](#id0)
  - [Conceptos Fundamentales](#id1)
- - [PySpark: Introducción y su Importancia en la Programación Paralela](#id2)
- - [Resumen de comandos de terminal linux](#id3)
+ - [Ejemplos con esquemas sencillos](#id2)
+ - [PySpark: Introducción y su Importancia en la Programación Paralela](#id3)
+ - [Resumen de comandos de terminal linux](#id4)
 
 # Introducción <a name=id0></a>
 
@@ -11,7 +12,7 @@ La programación paralela y distribuida es una disciplina que se enfoca en la ej
 
 Este repositorio tiene como objetivo proporcionar una visión general de la programación paralela y distribuida en Python, utilizando la biblioteca multiprocessing. A continuación, encontrarás definiciones de conceptos clave y una lista de temas relacionados.
 
-# Conceptos Fundamentales
+# Conceptos Fundamentales <a name=id1></a>
 
  - **Programación Paralela**: Se refiere a la ejecución simultánea de tareas en múltiples hilos o procesos con el objetivo de acelerar el tiempo de ejecución. Los hilos o procesos pueden comunicarse y coordinarse entre sí para realizar tareas de manera eficiente.
 
@@ -37,7 +38,7 @@ Aparte tenemos definiciones adicionales que te ayudarán a comprender mejor los 
 
  - **Balanceo de carga (Load Balancing)**: Es una técnica que distribuye la carga de trabajo de manera equitativa entre varios procesos o máquinas en un sistema paralelo o distribuido. El objetivo es aprovechar eficientemente los recursos disponibles y evitar situaciones en las que algunos procesos o máquinas estén sobrecargados mientras otros están inactivos.
 
-# Ejemplos con esquemas sencillos <a name=id1></a>
+# Ejemplos con esquemas sencillos <a name=id2></a>
 
 ### Multiprocessing 
 
@@ -232,7 +233,7 @@ if __name__ == '__main__':
 ``` 
 
 
-# PySpark: Introducción y su Importancia en la Programación Paralela <a name=id2></a>
+# PySpark: Introducción y su Importancia en la Programación Paralela <a name=id3></a>
 
 PySpark es la interfaz de programación de Python para Apache Spark, un framework de procesamiento de datos distribuido y de alto rendimiento. PySpark permite aprovechar la capacidad de cómputo paralelo de Spark utilizando la potencia de Python como lenguaje de programación.
 
@@ -284,7 +285,7 @@ PySpark proporciona la capacidad de conectarse a un clúster auxiliar para aprov
 Una vez conectado al clúster, PySpark permite distribuir las tareas de procesamiento de datos en el clúster.
 
 
-# Resumen de comandos de terminal linux <a name=id3></a>
+# Resumen de comandos de terminal linux <a name=id4></a>
 
 ### Comandos de Navegación y Gestión de Directorios
 
@@ -318,23 +319,4 @@ Una vez conectado al clúster, PySpark permite distribuir las tareas de procesam
 - `ssh`: Inicia una sesión segura de shell remota en un servidor.
 - `scp`: Copia archivos de forma segura entre hosts locales y remotos.
 - `rsync`: Sincroniza archivos y directorios de forma eficiente entre hosts locales y remotos.
-
-### Comandos de Gestión de Paquetes
-
-- `apt`: Gestiona paquetes en distribuciones basadas en Debian, como Ubuntu.
-- `yum`: Gestiona paquetes en distribuciones basadas en Red Hat, como CentOS.
-- `dnf`: Gestiona paquetes en distribuciones basadas en Fedora.
-
-### Comandos de Administración de Sistemas
-
-- `top`: Muestra información en tiempo real sobre los procesos en ejecución.
-- `df`: Muestra el espacio utilizado y disponible en los sistemas de archivos.
-- `free`: Muestra la memoria disponible y utilizada en el sistema.
-- `cron`: Programa tareas para que se ejecuten automáticamente en momentos específicos.
-- `systemctl`: Controla y administra servicios del sistema.
-
-Recuerda consultar la documentación y los manuales de cada comando para obtener más información sobre su uso y opciones específicas.
-
-
-
 

@@ -3,6 +3,7 @@
  - [Introducción](#id0)
  - [Conceptos Fundamentales](#id1)
  - [PySpark: Introducción y su Importancia en la Programación Paralela](#id2)
+ - [Resumen de comandos de terminal linux](#id3)
 
 # Introducción <a name=id0></a>
 
@@ -282,6 +283,57 @@ PySpark proporciona la capacidad de conectarse a un clúster auxiliar para aprov
 
 Una vez conectado al clúster, PySpark permite distribuir las tareas de procesamiento de datos en el clúster.
 
+
+# Resumen de comandos de terminal linux <a name=id3></a>
+
+### Comandos de Navegación y Gestión de Directorios
+
+- `pwd`: Muestra la ruta del directorio actual.
+- `ls`: Lista los archivos y directorios en el directorio actual.
+- `cd`: Cambia el directorio actual.
+- `mkdir`: Crea uno o varios directorios.
+
+### Comandos de Gestión de Archivos
+
+- `cp`: Copia archivos y directorios.
+- `mv`: Mueve o cambia el nombre de archivos y directorios.
+- `rm`: Elimina archivos y directorios.
+- `touch`: Crea un nuevo archivo vacío.
+- `cat`: Muestra el contenido de un archivo.
+- `head`: Muestra las primeras líneas de un archivo.
+- `tail`: Muestra las últimas líneas de un archivo.
+
+### Comandos de Gestión de Usuarios y Permisos
+
+- `sudo`: Ejecuta un comando con privilegios de superusuario.
+- `useradd`: Crea un nuevo usuario.
+- `passwd`: Cambia la contraseña de un usuario.
+- `chown`: Cambia el propietario de un archivo o directorio.
+- `chmod`: Cambia los permisos de un archivo o directorio.
+
+### Comandos de Red y Conectividad
+
+- `ping`: Envía un paquete ICMP a una dirección IP para verificar la conectividad.
+- `ifconfig`: Muestra la configuración de red de las interfaces de red.
+- `ssh`: Inicia una sesión segura de shell remota en un servidor.
+- `scp`: Copia archivos de forma segura entre hosts locales y remotos.
+- `rsync`: Sincroniza archivos y directorios de forma eficiente entre hosts locales y remotos.
+
+### Comandos de Gestión de Paquetes
+
+- `apt`: Gestiona paquetes en distribuciones basadas en Debian, como Ubuntu.
+- `yum`: Gestiona paquetes en distribuciones basadas en Red Hat, como CentOS.
+- `dnf`: Gestiona paquetes en distribuciones basadas en Fedora.
+
+### Comandos de Administración de Sistemas
+
+- `top`: Muestra información en tiempo real sobre los procesos en ejecución.
+- `df`: Muestra el espacio utilizado y disponible en los sistemas de archivos.
+- `free`: Muestra la memoria disponible y utilizada en el sistema.
+- `cron`: Programa tareas para que se ejecuten automáticamente en momentos específicos.
+- `systemctl`: Controla y administra servicios del sistema.
+
+Recuerda consultar la documentación y los manuales de cada comando para obtener más información sobre su uso y opciones específicas.
 
 
 

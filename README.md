@@ -4,7 +4,7 @@ La programación paralela y distribuida es una disciplina que se enfoca en la ej
 
 Este repositorio tiene como objetivo proporcionar una visión general de la programación paralela y distribuida en Python, utilizando la biblioteca multiprocessing. A continuación, encontrarás definiciones de conceptos clave y una lista de temas relacionados.
 
-## Definiciones
+## Conceptos Fundamentales
 
  - **Programación Paralela**: Se refiere a la ejecución simultánea de tareas en múltiples hilos o procesos con el objetivo de acelerar el tiempo de ejecución. Los hilos o procesos pueden comunicarse y coordinarse entre sí para realizar tareas de manera eficiente.
 
@@ -16,8 +16,21 @@ Este repositorio tiene como objetivo proporcionar una visión general de la prog
 
 - **Locks**: Los locks (bloqueos) son mecanismos de sincronización que permiten a los hilos o procesos adquirir o liberar acceso exclusivo a un recurso compartido. Un lock puede ser adquirido por un solo hilo o proceso a la vez, evitando que otros accedan al recurso hasta que el lock se libere.
 
+Aparte tenemos definiciones adicionales que te ayudarán a comprender mejor los conceptos clave relacionados con la programación paralela y distribuida, y cómo abordar desafíos como las condiciones de carrera, el interbloqueo, la inanición y el balanceo de carga.
 
-## Ejemplos con esqueñmas sencillos
+ - **Deadlock (Interbloqueo)**: Es una situación en la que dos o más procesos o hilos quedan atrapados permanentemente esperando recursos que nunca se liberan. Cada proceso o hilo retiene un recurso mientras espera que se libere otro recurso en posesión de otro proceso o hilo, lo que provoca una parálisis en el sistema.
+
+ - **Inanición (Starvation)**: Es un problema que ocurre cuando un proceso o hilo no puede avanzar o no puede acceder a los recursos necesarios debido a que otros procesos o hilos tienen prioridad sobre él. El proceso o hilo "hambriento" queda relegado continuamente, sin obtener los recursos necesarios para su ejecución.
+
+ - **Condiciones de carrera (Race Conditions)**: Se refiere a la situación en la que el resultado de una operación depende del orden y la sincronización de los eventos concurrentes. Ocurre cuando múltiples procesos o hilos acceden simultáneamente a un recurso compartido y el resultado final puede variar según el orden en que se realicen las operaciones.
+
+ - **Exclusión mutua**: Es un mecanismo que garantiza que dos o más procesos o hilos no puedan acceder simultáneamente a un recurso compartido. La exclusión mutua se logra utilizando técnicas como locks, semáforos o monitores para permitir que solo un proceso o hilo acceda al recurso en un momento dado.
+
+ - **Sincronización**: Se refiere a los mecanismos utilizados para coordinar el acceso y la ejecución de múltiples procesos o hilos, evitando problemas como las condiciones de carrera o el interbloqueo. La sincronización puede lograrse mediante semáforos, locks, variables de condición u otras estructuras de datos que faciliten la comunicación y la cooperación entre los procesos o hilos.
+
+ - **Balanceo de carga (Load Balancing)**: Es una técnica que distribuye la carga de trabajo de manera equitativa entre varios procesos o máquinas en un sistema paralelo o distribuido. El objetivo es aprovechar eficientemente los recursos disponibles y evitar situaciones en las que algunos procesos o máquinas estén sobrecargados mientras otros están inactivos.
+
+## Ejemplos con esquemas sencillos
 
 ### Multiprocessing 
 

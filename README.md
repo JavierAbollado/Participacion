@@ -17,7 +17,7 @@ Este repositorio tiene como objetivo proporcionar una visión general de la prog
 - **Locks**: Los locks (bloqueos) son mecanismos de sincronización que permiten a los hilos o procesos adquirir o liberar acceso exclusivo a un recurso compartido. Un lock puede ser adquirido por un solo hilo o proceso a la vez, evitando que otros accedan al recurso hasta que el lock se libere.
 
 
-## Ejemplos sencillos
+## Ejemplos con esqueñmas sencillos
 
 ### Multiprocessing 
 
@@ -36,6 +36,29 @@ if __name__ == '__main__':
     with Pool(processes=4) as pool:
         resultados = pool.map(calcular_suma, numeros)
     print(resultados)
+```
+
+Otro pequeño ejemplo puede ser sobre el cálculo de la multiplicación de matrices grandes:
+
+```python
+import numpy as np
+from multiprocessing import Pool
+
+def multiplicar_fila(matriz_a, matriz_b, fila):
+    resultado = np.dot(matriz_a[fila], matriz_b)
+    return resultado
+
+if __name__ == '__main__':
+    matriz_a = np.random.rand(1000, 1000)
+    matriz_b = np.random.rand(1000, 1000)
+
+    filas = range(matriz_a.shape[0])
+
+    with Pool() as pool:
+        resultados = pool.starmap(multiplicar_fila, [(matriz_a, matriz_b, fila) for fila in filas])
+
+    matriz_resultado = np.vstack(resultados)
+    print(matriz_resultado)
 ```
 
  ### Sincronización con semáforos
@@ -71,6 +94,65 @@ if __name__ == '__main__':
     print(recurso_compartido)
 ```
 
+Otro ejemplo puede ser el famoso problema de los "Lectores-Escritores":
+
+```python
+import time
+from multiprocessing import Semaphore, Process
+
+semaforo_lectores = Semaphore(1)
+semaforo_escritores = Semaphore(1)
+lectores = 0
+escritores = 0
+
+def lector():
+    global lectores
+    while True:
+        semaforo_lectores.acquire()
+        lectores += 1
+        if lectores == 1:
+            semaforo_escritores.acquire()
+        semaforo_lectores.release()
+
+        # Realizar operaciones de lectura aquí
+        print("Lector leyendo...")
+
+        semaforo_lectores.acquire()
+        lectores -= 1
+        if lectores == 0:
+            semaforo_escritores.release()
+        semaforo_lectores.release()
+
+        time.sleep(1)
+
+def escritor():
+    global escritores
+    while True:
+        semaforo_escritores.acquire()
+        escritores += 1
+        if escritores == 1:
+            semaforo_lectores.acquire()
+        semaforo_escritores.release()
+
+        # Realizar operaciones de escritura aquí
+        print("Escritor escribiendo...")
+
+        semaforo_escritores.acquire()
+        escritores -= 1
+        if escritores == 0:
+            semaforo_lectores.release()
+        semaforo_escritores.release()
+
+        time.sleep(1)
+
+if __name__ == '__main__':
+    for _ in range(2):
+        Process(target=lector).start()
+
+    for _ in range(2):
+        Process(target=escritor).start()
+```
+
 ### Locks
 
 Los locks (bloqueos) son mecanismos de sincronización que permiten a los hilos o procesos adquirir o liberar acceso exclusivo a un recurso compartido. Puedes utilizar la clase Lock del módulo multiprocessing para implementar locks en Python.
@@ -101,8 +183,33 @@ if __name__ == '__main__':
     print(recurso_compartido)
 ```
 
+También podemos hacer un hilo productor y consumidor con un búfer compartido:
 
+```python
+import time
+import random
+from multiprocessing import Lock, Process, Queue
 
+lock = Lock()
+buffer_compartido = Queue(maxsize=5)
+
+def productor():
+    while True:
+        item = random.randint(1, 100)
+        buffer_compartido.put(item)
+        print("Productor produce:", item)
+        time.sleep(1)
+
+def consumidor():
+    while True:
+        item = buffer_compartido.get()
+        print("Consumidor consume:", item)
+        time.sleep(2)
+
+if __name__ == '__main__':
+    Process(target=productor).start()
+    Process(target=consumidor).start()
+``` 
 
 
 

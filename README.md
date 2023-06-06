@@ -1,6 +1,6 @@
 # Entrega de ejercicios
 
-He realizado todos los ejercicios. Los links para cada uno de los repositorios se pueden encontrar acontinuación.
+He realizado todos los ejercicios. Los links para cada uno de los repositorios se pueden encontrar a continuación.
 
 ## Programación concurrente
 

@@ -4,16 +4,16 @@ He realizado todos los ejercicios. Los links para cada uno de los repositorios s
 
 ## Programación concurrente
 
- - [GIT y multiprocessingTarea](https://github.com/JavierAbollado/prpa_dia1.git)
- - [Sección crítica. Algoritmo de deckerTarea](https://github.com/JavierAbollado/prpa_decker.git)
- - [Sección crítica con semáforosTarea](https://github.com/JavierAbollado/CritSectionSem.git)
- - [Práctica 1Tarea](https://github.com/JavierAbollado/Practica-1.git)
- - [Práctica 2Tarea](https://github.com/JavierAbollado/Practica-2.git)
+ - [GIT y multiprocessing](https://github.com/JavierAbollado/prpa_dia1.git)
+ - [Sección crítica. Algoritmo de decker](https://github.com/JavierAbollado/prpa_decker.git)
+ - [Sección crítica con semáforos](https://github.com/JavierAbollado/CritSectionSem.git)
+ - [Práctica 1](https://github.com/JavierAbollado/Practica-1.git)
+ - [Práctica 2](https://github.com/JavierAbollado/Practica-2.git)
 
 ## Programación Distribuida
 
- - [Ejercicios de Programación distribuidaTarea](https://github.com/JavierAbollado/chats.git)
- - [Ejercicios mqttTarea](https://github.com/JavierAbollado/Ejercicios-MQTT.git)
+ - [Ejercicios de Programación distribuida](https://github.com/JavierAbollado/chats.git)
+ - [Ejercicios mqtt](https://github.com/JavierAbollado/Ejercicios-MQTT.git)
  - [Práctica obligatoria distribuida](https://github.com/JavierAbollado/Practica-3.git)
 
 ## Programación Paralela

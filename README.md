@@ -1,4 +1,28 @@
-# Programación Paralela y Distribuida en Python
+# Entrega de ejercicios
+
+He realizado todos los ejercicios. Los links para cada uno de los repositorios se pueden encontrar acontinuación.
+
+## Programación concurrente
+
+ - [GIT y multiprocessingTarea](https://github.com/JavierAbollado/prpa_dia1.git)
+ - [Sección crítica. Algoritmo de deckerTarea](https://github.com/JavierAbollado/prpa_decker.git)
+ - [Sección crítica con semáforosTarea](https://github.com/JavierAbollado/CritSectionSem.git)
+ - [Práctica 1Tarea](https://github.com/JavierAbollado/Practica-1.git)
+ - [Práctica 2Tarea](https://github.com/JavierAbollado/Practica-2.git)
+
+## Programación Distribuida
+
+ - [Ejercicios de Programación distribuidaTarea](https://github.com/JavierAbollado/chats.git)
+ - [Ejercicios mqttTarea](https://github.com/JavierAbollado/Ejercicios-MQTT.git)
+ - [Práctica obligatoria distribuida](https://github.com/JavierAbollado/Practica-3.git)
+
+## Programación Paralela
+
+ - [Contar las palabras de "Don Quijote de La Mancha" con Spark](https://github.com/JavierAbollado/Contar-Quijote-Spark.git)
+ - [Triciclos en un grafo](https://github.com/JavierAbollado/Triciclos.git)
+ - [Práctica Obligatoria Spark](https://github.com/JavierAbollado/Practica-4.git)
+
+# Apuntes | Programación Paralela y Distribuida en Python
 
  - [Introducción](#id0)
  - [Conceptos Fundamentales](#id1)
